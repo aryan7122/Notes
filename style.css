@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    background-color: #4c4b4b;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#addBtn {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background-color: #2d3436;
+    color: white;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    z-index: 2;
+}
+#addBtn:hover{
+    box-shadow: 1px 1px 5px 0px white;
+    color: rgb(210, 210, 210);
+}
+#addBtn:active{
+    padding: 9px;
+    box-shadow: 2px 2px 5px 0px white;
+}
+.note {
+    width: 455px;
+    height: 400px;
+    background-color: rgb(20, 20, 20);
+    margin: 15px;
+    margin-top: 30px;
+}
+
+.tool {
+    width: 100%;
+    background-color: #2d3436;
+    color: white;
+    padding: 2px;
+    display: flex;
+    justify-content: end;
+}
+
+.tool i {
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.tool #trash{
+    color: rgb(255, 0, 0);
+        padding-left: 20px;
+}
+.tool #trash:hover{
+    color: rgb(187, 0, 0);
+}
+.tool #trash:active{
+    font-size: 15px;
+}
+.note textarea {
+    border: none;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.note textarea:focus {
+    border: 0;
+    outline: 0;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 1px 3px 15px 0px black;
+}
