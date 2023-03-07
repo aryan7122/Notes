@@ -2,21 +2,21 @@ const addBtn = document.querySelector("#addBtn")
 const main = document.querySelector("#main")
 addBtn.addEventListener(
     "click",
-    function() {
+    function () {
         addNote()
-        
+
     }
 )
 const saveNotes = () => {
     const notes = document.querySelectorAll(".note textarea");
     // console.log(notes);
     const data = [];
-    notes.forEach( 
-            (note) => {
-                data.push(note.value)
-            }
-        )
-        // console.log(data)
+    notes.forEach(
+        (note) => {
+            data.push(note.value)
+        }
+    )
+    // console.log(data)
     if (data.length === 0) {
         localStorage.removeItem("notes")
     } else {
@@ -46,20 +46,20 @@ const addNote = (text = "") => {
 
     note.querySelector(".trash").addEventListener(
         "click",
-        function() {
+        function () {
             note.remove()
             saveNotes()
         }
     )
     note.querySelector(".save").addEventListener(
         "click",
-        function() {
+        function () {
             saveNotes()
         }
     )
     note.querySelector("textarea").addEventListener(
         "focusout",
-        function() {
+        function () {
             saveNotes()
         }
     )
@@ -69,7 +69,7 @@ const addNote = (text = "") => {
 
 
 (
-    function() {
+    function () {
         const lsNotes = JSON.parse(localStorage.getItem("notes"));
         if (lsNotes === null) {
             addNote()
@@ -83,3 +83,18 @@ const addNote = (text = "") => {
 
     }
 )()
+
+
+
+
+// savefile
+let filesave = document.getElementsByClassName('fa-save')[0];
+filesave.addEventListener('click', () => {
+    const link = document.createElement("a");
+    const content = document.querySelector("textarea").value;
+    const file = new Blob([content], { type: 'text/plain' });
+    link.href = URL.createObjectURL(file);
+    link.download = "sample.txt";
+    link.click();
+    URL.revokeObjectURL(link.href);
+});
